@@ -1,27 +1,35 @@
 @using SocOps.Models
 
-<div class="flex flex-col min-h-full bg-gray-50">
+<div class="flex flex-col min-h-full px-4 py-6">
     <!-- Header -->
-    <header class="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+    <header class="flex items-center justify-between mb-6">
         <button
             @onclick="OnReset"
-            class="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100">
+            class="btn btn-soft text-sm px-3 py-2">
             ← Back
         </button>
-        <h1 class="font-bold text-gray-900">Soc Ops</h1>
-        <div class="w-16"></div>
+
+        <div class="text-center">
+            <p class="text-xs uppercase tracking-wide text-gray-400">Social Bingo</p>
+            <h1 class="text-2xl font-bold text-white">Soc Ops</h1>
+        </div>
+
+        <div class="w-24"></div>
     </header>
 
     <!-- Instructions -->
-    <p class="text-center text-gray-500 text-sm py-2 px-4">
-        Tap a square when you find someone who matches it.
-    </p>
+    <div class="card p-4 mb-4">
+        <p class="text-sm text-gray-700">
+            Tap a square when you find someone who matches it.
+        </p>
+    </div>
 
     <!-- Bingo indicator -->
     @if (HasBingo)
     {
-        <div class="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-            🎉 BINGO! You got a line!
+        <div class="alert alert-success mb-4">
+            <span class="text-lg">🎉</span>
+            <span>BINGO! You got a line!</span>
         </div>
     }
 
